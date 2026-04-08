@@ -33,7 +33,9 @@
         </div>
 
         <div>
-            Enter your Credentials to Login
+            <span class="ms-6 text-sm text-white-600 dark:text-gray-200">{{ __('Enter your Credentials to Login.
+') }}
+            </span>
         </div>
 
         <div class="flex items-center justify-end mt-4">
