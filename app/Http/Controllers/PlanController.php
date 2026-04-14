@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Plan;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class PlanController extends Controller
@@ -12,7 +14,7 @@ class PlanController extends Controller
         return view('pricing', compact('plans'));
     }
 
-    Public function choose(Request $request, $planId)
+    Public function choose(Request $request)
     {
         $user = Auth::user();
         $user->plan_id = $request->plan_id;
