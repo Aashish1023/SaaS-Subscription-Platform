@@ -12,10 +12,12 @@ class PlanController extends Controller
         return view('pricing', compact('plans'));
     }
 
-    Publicfunction choose(Request $request, $planId)
+    Public function choose(Request $request, $planId)
     {
-        $plan = Plan::findOrFail($planId);
+        $user = Auth::user();
+        $user->plan_id = $request->plan_id;
+        $user->save();
         // Logic to handle plan selection and payment processing
-        return redirect()->route('checkout', ['plan' => $plan->id]);
+        return redirect()->route('dashboard')->with('success', 'Plan selected successfully!');
     }
 }
