@@ -19,6 +19,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/pricing', [PlanController::class, 'index'])->name('pricing');
-Route::post('/choose-plan/{planId}', [PlanController::class, 'choose'])->name('choose.plan');
+Route::post('/choose-plan', [PlanController::class, 'choose'])->name('choose.plan');
 
 require __DIR__.'/auth.php';
